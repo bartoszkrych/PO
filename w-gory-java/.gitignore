@@ -7,6 +7,8 @@ build/
 gradlew
 gradlew.bat
 gradle
+local.properties
+WGory.db
 
 ### STS ###
 .apt_generated
