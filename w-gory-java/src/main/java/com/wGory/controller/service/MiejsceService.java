@@ -14,8 +14,7 @@ public class MiejsceService {
         this.miejsceRepository = miejsceRepository;
     }
 
-    public List<Miejsce> getAllMiejsca()
-    {
+    public List<Miejsce> getAllMiejsca() {
         return miejsceRepository.findAll();
     }
 }
