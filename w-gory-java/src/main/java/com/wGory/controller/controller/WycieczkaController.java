@@ -25,7 +25,7 @@ public class WycieczkaController {
             required = true,
             dataType = "Integer",
             example = "1")
-    @GetMapping("/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Wycieczka> getWycieczkaById(@PathVariable(value = "id") Integer id)
     {
         return ResponseEntity.ok(wycieczkaService.getWycieczkaById(id));
@@ -38,7 +38,7 @@ public class WycieczkaController {
             required = true,
             dataType = "Integer",
             example = "1")
-    @GetMapping("/id/{id}")
+    @GetMapping("/done/{id}")
     public ResponseEntity<Wycieczka> setWycieczkaDone(@PathVariable(value = "id") Integer id)
     {
         return ResponseEntity.ok(wycieczkaService.setWycieczkaDone(id));

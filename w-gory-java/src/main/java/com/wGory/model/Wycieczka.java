@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "WYCIECZKA")
@@ -21,13 +22,16 @@ public class Wycieczka {
 
     @ManyToOne
     private OdznakaTurysty odznakaTurysty;
+    @OneToMany
+    private List<OdcinekWycieczki> odcinkiWycieczki;
 
     @Transient
     private Integer punktyWycieczki;
 
     @PostLoad
     private void postLoad() {
-        punktyWycieczki = 10;
+
+        punktyWycieczki = odcinkiWycieczki.stream().mapToInt(oW -> oW.getOdcinekTrasy().getPunkty()).sum();
     }
 
 }

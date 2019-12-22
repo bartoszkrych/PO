@@ -5,6 +5,8 @@ import com.wGory.model.StatusWycieczki;
 import com.wGory.model.Wycieczka;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.IntStream;
+
 @Service
 public class WycieczkaService {
     private WycieczkaRepository wycieczkaRepository;
@@ -15,7 +17,13 @@ public class WycieczkaService {
 
     public Wycieczka getWycieczkaById(Integer id)
     {
-        return wycieczkaRepository.findById(id).orElse(null);
+        var wycieczka = wycieczkaRepository.findById(id).orElse(null);
+        if( wycieczka == null) return  null;
+        var odcinki = wycieczka.getOdcinkiWycieczki();
+
+        IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
+
+        return wycieczka;
     }
 
     public Wycieczka setWycieczkaDone(Integer id)
