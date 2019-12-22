@@ -1,17 +1,17 @@
 package com.wGory.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.PostLoad;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "TRASA_WLASNA")
 @Data
+@PrimaryKeyJoinColumn(name = "trasa_wlasna_id")
 public class TrasaWlasna extends OdcinekTrasy {
     private String nazwa;
     private String opis;

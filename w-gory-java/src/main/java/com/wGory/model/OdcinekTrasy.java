@@ -6,11 +6,11 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Data
 public class OdcinekTrasy {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
+    private Integer id;
     private Integer punkty;
 }
