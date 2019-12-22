@@ -2,6 +2,7 @@ package com.wGory.controller.controller;
 
 import com.wGory.controller.service.MiejsceService;
 import com.wGory.model.Miejsce;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,9 @@ public class MiejsceController {
         this.miejsceService = miejsceService;
     }
 
+    @ApiOperation(value = "Pobranie wszystkie istniejące miejsca w bazie danych.")
     @GetMapping("/")
-    public List<Miejsce> getAllDrivers() {
+    public List<Miejsce> getAllMiejsca() {
         return miejsceService.getAllMiejsca();
     }
 }
