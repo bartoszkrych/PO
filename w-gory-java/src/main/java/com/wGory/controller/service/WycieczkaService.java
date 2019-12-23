@@ -21,7 +21,7 @@ public class WycieczkaService {
         if (wycieczka == null) return null;
         var odcinki = wycieczka.getOdcinkiWycieczki();
 
-        IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
+         IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
 
         return wycieczka;
     }
