@@ -20,8 +20,8 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
 
   ngOnInit() {
     this.wycieczka = new Wycieczka();
-    this.id = this.route.snapshot.params['id'];
-
+    //this.id = this.route.snapshot.params['id'];
+    this.id = 2;
     this.wycieczkaService.getWycieczkaById(this.id)
     .subscribe(w => {
       this.wycieczka = w;
