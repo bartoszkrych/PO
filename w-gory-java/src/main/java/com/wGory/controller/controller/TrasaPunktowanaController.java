@@ -6,8 +6,6 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RequestMapping("/trasy-punktowane")
 @RestController
 @CrossOrigin
@@ -26,7 +24,7 @@ public class TrasaPunktowanaController {
             required = true,
             dataType = "TrasaPunktowana")
     @PostMapping("/addTrasaPunkt")
-    public TrasaPunktowana addTrasaPunkt(@Valid @RequestBody TrasaPunktowana trasaPunkt) {
+    public TrasaPunktowana addTrasaPunkt(@RequestBody TrasaPunktowana trasaPunkt) {
         return trasaPunktowanaService.addTrasaPunkt(trasaPunkt);
     }
 }

@@ -50,8 +50,6 @@ public class WycieczkaServiceTest {
     @Test
     public void getWycieczkaByIdWhenNotFound() {
         // when
-        Wycieczka wycieczka = new Wycieczka();
-
         when(wycieczkaRepository.findById(DEFAULT_ID)).thenReturn(Optional.empty());
 
         // given
