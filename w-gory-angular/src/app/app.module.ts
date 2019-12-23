@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { MiejsceService } from './controller/service/miejsce.service';
 import { TrasaPunktowanaService } from './controller/service/trasa-punktowana.service';
 import { WycieczkaService } from './controller/service/wycieczka.service';
+import { ZatwierdzenieWycieczkiComponent } from './component/zatwierdzenie-wycieczki/zatwierdzenie-wycieczki.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ZatwierdzenieWycieczkiComponent
   ],
   imports: [
     BrowserModule,

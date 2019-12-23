@@ -1,0 +1,45 @@
+<div class="card bg-light my-5">
+    <div class="card-body">
+      <div class="card-body">
+        <h2>Zatwierdzenie odbycia wycieczki</h2>
+       
+        <div>
+          <div>
+            <label><b>Nazwa wycieczki </b></label> {{wycieczka.nazwa}}
+          </div>
+          <br>
+          </div>
+          <label><b>Lista tras odbytych w ramach wycieczki </b></label>
+              <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>id</th>
+                    <th>punkty</th>
+                    <th>------</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let odcinek of odcinki">
+                    <td>{{odcinek.id}}</td>
+                    <td>{{odcinek.punkty}}</td>
+                    <td>------</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        
+        <div>
+          <label><b>Planowana data wycieczki </b></label> {{wycieczka.planowanaData}}
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-info">
+          ZATWIERDŹ
+        </button>
+        <button class="btn btn-info">
+          ANULUJ
+        </button>
+        <br>
+      </div>
+    </div>
+  </div>
