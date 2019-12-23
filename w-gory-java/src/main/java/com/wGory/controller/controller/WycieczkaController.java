@@ -26,21 +26,19 @@ public class WycieczkaController {
             dataType = "Integer",
             example = "1")
     @GetMapping("/{id}")
-    public ResponseEntity<Wycieczka> getWycieczkaById(@PathVariable(value = "id") Integer id)
-    {
+    public ResponseEntity<Wycieczka> getWycieczkaById(@PathVariable(value = "id") Integer id) {
         return ResponseEntity.ok(wycieczkaService.getWycieczkaById(id));
     }
 
     @ApiOperation(value = "Status wycieczki zostaje zmieniony na \"Odbyta\", a zmiana zapisana w bazie danych.")
     @ApiImplicitParam(
             name = "id",
-            value = "Unikatowy number identyfikujący wycieczkę w bazie danych.",
+            value = "Unikatowy numer identyfikujący wycieczkę w bazie danych.",
             required = true,
             dataType = "Integer",
             example = "1")
     @GetMapping("/done/{id}")
-    public ResponseEntity<Wycieczka> setWycieczkaDone(@PathVariable(value = "id") Integer id)
-    {
+    public ResponseEntity<Wycieczka> setWycieczkaDone(@PathVariable(value = "id") Integer id) {
         return ResponseEntity.ok(wycieczkaService.setWycieczkaDone(id));
     }
 }
