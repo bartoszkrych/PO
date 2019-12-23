@@ -12,14 +12,15 @@ public class TrasaPunktowanaService {
         this.trasaPunktowanaRepository = trasaPunktowanaRepository;
     }
 
-    public TrasaPunktowana addTrasaPunkt(TrasaPunktowana trasaPunkt)
-    {
+    public TrasaPunktowana addTrasaPunkt(TrasaPunktowana trasaPunkt) {
         var poczatek = trasaPunkt.getPoczatek();
         var koniec = trasaPunkt.getKoniec();
+        if (poczatek == null || koniec == null) return null;
+        if (poczatek.getObszarGorski() != koniec.getObszarGorski()) return null;
 
-        var trasy =trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek,koniec);
+        var trasy = trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek, koniec);
 
-        if(trasy.isEmpty())return trasaPunktowanaRepository.save(trasaPunkt);
+        if (trasy.isEmpty()) return trasaPunktowanaRepository.save(trasaPunkt);
 
         return null;
     }

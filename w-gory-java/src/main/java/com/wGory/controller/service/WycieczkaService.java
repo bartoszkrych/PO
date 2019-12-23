@@ -5,6 +5,7 @@ import com.wGory.model.StatusWycieczki;
 import com.wGory.model.Wycieczka;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.stream.IntStream;
 
 @Service
@@ -15,10 +16,9 @@ public class WycieczkaService {
         this.wycieczkaRepository = wycieczkaRepository;
     }
 
-    public Wycieczka getWycieczkaById(Integer id)
-    {
+    public Wycieczka getWycieczkaById(Integer id) {
         var wycieczka = wycieczkaRepository.findById(id).orElse(null);
-        if( wycieczka == null) return  null;
+        if (wycieczka == null) return null;
         var odcinki = wycieczka.getOdcinkiWycieczki();
 
         IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
@@ -26,16 +26,15 @@ public class WycieczkaService {
         return wycieczka;
     }
 
-    public Wycieczka setWycieczkaDone(Integer id)
-    {
+    public Wycieczka setWycieczkaDone(Integer id) {
         var wycieczka = wycieczkaRepository.findById(id).orElse(null);
 
-        if(wycieczka == null) return null;
-
-        if(wycieczka.getStatus() != StatusWycieczki.Zaplanowana) return null;
+        if (wycieczka == null) return null;
+        if (wycieczka.getPlanowanaData().compareTo(LocalDate.now()) > 0) return null;
+        if (wycieczka.getStatus() != StatusWycieczki.Zaplanowana) return null;
 
         wycieczka.setStatus(StatusWycieczki.Odbyta);
-        return wycieczkaRepository.save(wycieczka);
 
+        return wycieczkaRepository.save(wycieczka);
     }
 }
