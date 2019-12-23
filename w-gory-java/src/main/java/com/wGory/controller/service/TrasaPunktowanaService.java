@@ -1,11 +1,8 @@
 package com.wGory.controller.service;
 
 import com.wGory.controller.repository.TrasaPunktowanaRepository;
-import com.wGory.model.Miejsce;
 import com.wGory.model.TrasaPunktowana;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class TrasaPunktowanaService {
@@ -15,13 +12,15 @@ public class TrasaPunktowanaService {
         this.trasaPunktowanaRepository = trasaPunktowanaRepository;
     }
 
-    public List<TrasaPunktowana> findByPoczatekAndKoniec(Miejsce poczatek, Miejsce koniec)
-    {
-        return trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek,koniec);
-    }
-
     public TrasaPunktowana addTrasaPunkt(TrasaPunktowana trasaPunkt)
     {
-        return trasaPunktowanaRepository.save(trasaPunkt);
+        var poczatek = trasaPunkt.getPoczatek();
+        var koniec = trasaPunkt.getKoniec();
+
+        var trasy =trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek,koniec);
+
+        if(trasy.isEmpty())return trasaPunktowanaRepository.save(trasaPunkt);
+
+        return null;
     }
 }
