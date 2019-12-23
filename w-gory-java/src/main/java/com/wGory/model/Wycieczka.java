@@ -18,7 +18,7 @@ public class Wycieczka {
     private LocalDate dataUtworzenia;
 
     @Enumerated(EnumType.STRING)
-    private StatusWycieczki status;
+    private StatusWycieczki status = StatusWycieczki.Zaplanowana;
 
     @ManyToOne
     private OdznakaTurysty odznakaTurysty;

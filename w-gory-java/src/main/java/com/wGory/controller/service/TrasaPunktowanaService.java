@@ -16,12 +16,11 @@ public class TrasaPunktowanaService {
         var poczatek = trasaPunkt.getPoczatek();
         var koniec = trasaPunkt.getKoniec();
         if (poczatek == null || koniec == null) return null;
-        if (poczatek.getObszarGorski() != koniec.getObszarGorski()) return null;
+        if (!poczatek.getObszarGorski().equals(koniec.getObszarGorski())) return null;
 
         var trasy = trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek, koniec);
+        if (!trasy.isEmpty()) return null;
 
-        if (trasy.isEmpty()) return trasaPunktowanaRepository.save(trasaPunkt);
-
-        return null;
+        return trasaPunktowanaRepository.save(trasaPunkt);
     }
 }
