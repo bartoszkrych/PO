@@ -1,55 +1,16 @@
-<div id="Group_10">
-  <svg class="Rectangle_2">
-    <rect fill="rgba(130,225,128,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_2" rx="10" ry="10" x="0" y="0" width="1681" height="231">
-    </rect>
-  </svg>
-  <div id="Bartosz_Krych">
-    <span>Bartosz Krych</span>
-  </div>
-  <div id="W_G_RY">
-    <span>W GÓRY</span>
-  </div>
-  <img id="pttk_1_logo_png_transparent" src="pttk_1_logo_png_transparent.png" srcset="pttk_1_logo_png_transparent.png 1x, pttk_1_logo_png_transparent@2x.png 2x">
-  <div id="TRASY_PUNKTOWANE">
-    <span>TRASY PUNKTOWANE</span>
-  </div>
-  <svg class="Line_1" viewBox="0 0 2 40">
-    <path fill="transparent" stroke="rgba(27,154,36,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_1" d="M 0 0 L 0 40">
-    </path>
-  </svg>
-  <div id="MIEJSCA">
-    <span>MIEJSCA</span>
-  </div>
-  <svg class="Line_2" viewBox="0 0 2 40">
-    <path fill="transparent" stroke="rgba(27,154,36,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_2" d="M 0 0 L 0 40">
-    </path>
-  </svg>
-  <a routerLink="/wycieczki" routerLinkActive="active">
-  <div id="NORMY">
-    <span>NORMY</span>
-  </div>
-  </a>
-  <svg class="Line_3" viewBox="0 0 2 40">
-    <path fill="transparent" stroke="rgba(27,154,36,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_3" d="M 0 0 L 0 40">
-    </path>
-  </svg>
-  <div id="ODZNAKI">
-    <span>ODZNAKI</span>
-  </div>
-  <svg class="Line_4" viewBox="0 0 2 40">
-    <path fill="transparent" stroke="rgba(27,154,36,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_4" d="M 0 0 L 0 40">
-    </path>
-  </svg>
-  <div id="PRZODOWNICY">
-    <span>PRZODOWNICY</span>
-  </div>
-  <svg class="Line_5" viewBox="0 0 2 40">
-    <path fill="transparent" stroke="rgba(27,154,36,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_5" d="M 0 0 L 0 40">
-    </path>
-  </svg>
-  <div id="WYLOGUJ">
-    <span>WYLOGUJ</span>
+<div class="container" width="1680px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card my-5 bg-w-gory" >
+        <div class="card-body">
+          <h1 style="text-align: center">W Góry - Realizacja przypadków użycia </h1>
+        </div>
+        <ul class="text-center list-inline py-3">
+          <li class="list-inline-item"><a routerLink="/wycieczki" class="btn btn-primary">ZATWIERDZENIE ODBYCIA WYCIECZKI</a></li>
+          <li class="list-inline-item"><a  class="btn btn-primary last">TWORZENIE NOWEJ TRASY PUNKTOWANEJ</a></li>
+        </ul>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
