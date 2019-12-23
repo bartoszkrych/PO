@@ -10,5 +10,5 @@ export class Wycieczka{
     punktyWycieczki: number;
 
     odznakaTurysty: OdznakaTurysty;
-    odcinkiWycieczki: OdcinekWycieczki;
+    odcinkiWycieczki: OdcinekWycieczki[];
 }
