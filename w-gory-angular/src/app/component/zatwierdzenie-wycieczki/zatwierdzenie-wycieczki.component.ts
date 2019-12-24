@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WycieczkaService } from 'src/app/controller/service/wycieczka.service';
 import { Wycieczka } from 'src/app/model/wycieczka';
-import { OdcinekWycieczki } from 'src/app/model/odcinekWycieczki';
 import { OdcinekTrasy } from 'src/app/model/odcinekTrasy';
+import { TrasaWlasna } from 'src/app/model/trasaWlasna';
+import { TrasaPunktowana } from 'src/app/model/trasaPunktowana';
 
 @Component({
   selector: 'app-zatwierdzenie-wycieczki',
@@ -13,7 +14,9 @@ import { OdcinekTrasy } from 'src/app/model/odcinekTrasy';
 export class ZatwierdzenieWycieczkiComponent implements OnInit {
 
   wycieczka : Wycieczka;
-  odcinki: OdcinekTrasy[];
+  odcinki: Array<OdcinekTrasy>;
+  odcinkiW: TrasaWlasna[];
+  odcinkiP: TrasaPunktowana[];
   id: number;
 
   constructor(private route: ActivatedRoute, private router: Router, private wycieczkaService: WycieczkaService) { }
@@ -25,9 +28,11 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
     this.wycieczkaService.getWycieczkaById(this.id)
     .subscribe(w => {
       this.wycieczka = w;
-      for (let o of w.odcinkiWycieczki)
+      let odcinkiWycieczki = w.odcinkiWycieczki;
+      this.odcinki = new Array(odcinkiWycieczki.length);
+      for (let i = 0 ; i < w.odcinkiWycieczki.length; i++)
       {
-        this.odcinki.push(o.odcinekTrasy);
+        this.odcinki[i] = odcinkiWycieczki[i].odcinekTrasy;
       }
     },
     error => console.log(error));

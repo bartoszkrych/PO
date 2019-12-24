@@ -13,16 +13,17 @@
               <table class="table table-bordered table-striped">
                 <thead class="thead-dark">
                   <tr>
-                    <th>id</th>
-                    <th>punkty</th>
-                    <th>------</th>
+                    <th>ID</th>
+                    <th>ODCINEK</th>
+                    <th>PUNKTY</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let odcinek of odcinki">
                     <td>{{odcinek.id}}</td>
+                    <td *ngIf="odcinek.nazwa">{{odcinek.nazwa}}</td>
+                    <td *ngIf="odcinek.koniec">{{odcinek.koniec.nazwa}} -> {{odcinek.koniec.nazwa}}</td>
                     <td>{{odcinek.punkty}}</td>
-                    <td>------</td>
                   </tr>
                 </tbody>
               </table>

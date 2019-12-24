@@ -1,6 +1,7 @@
 import { OdcinekTrasy } from './odcinekTrasy';
 
-export class TrasaWlasna extends OdcinekTrasy{
+export class TrasaWlasna implements OdcinekTrasy{
+    id: number;
     nazwa: string;
     opis: string;
     przewyzszenie: number;

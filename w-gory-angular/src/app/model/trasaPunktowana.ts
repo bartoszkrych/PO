@@ -1,7 +1,8 @@
 import { Miejsce } from './miejsce';
 import { OdcinekTrasy } from './odcinekTrasy';
 
-export class TrasaPunktowana extends OdcinekTrasy{
+export class TrasaPunktowana implements OdcinekTrasy{
+    id: number;
     punkty: number;
     
     poczatek: Miejsce;
