@@ -1,45 +1,58 @@
 <div class="card bg-w-gory my-5">
     <div class="card-body">
-      <div class="card-body">
         <h2>Zatwierdzenie odbycia wycieczki</h2>
-       
-        <div>
-          <div>
-            <label><b>Nazwa wycieczki </b></label> {{wycieczka.nazwa}}
-          </div>
-          <br>
-          </div>
-          <label><b>Lista tras odbytych w ramach wycieczki </b></label>
-              <table class="table table-bordered table-striped">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>ID</th>
-                    <th>ODCINEK</th>
-                    <th>PUNKTY</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let odcinek of odcinki">
-                    <td>{{odcinek.id}}</td>
-                    <td *ngIf="odcinek.nazwa">{{odcinek.nazwa}}</td>
-                    <td *ngIf="odcinek.koniec">{{odcinek.koniec.nazwa}} -> {{odcinek.koniec.nazwa}}</td>
-                    <td>{{odcinek.punkty}}</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-        
-        <div>
-          <label><b>Planowana data wycieczki </b></label> {{wycieczka.planowanaData}}
-        </div>
-        <br>
-        <br>
-        <button class="btn btn-info">
-          ZATWIERDŹ
-        </button>
-        <button class="btn btn-info">
-          ANULUJ
-        </button>
-        <br>
+          <table class="table-w-gory" width="1000px">
+            <tr>
+              <th>
+                <label>Nazwa wycieczki</label> 
+              </th>
+              <th>
+                  <b>{{wycieczka.nazwa}} </b>
+              </th>
+            </tr>
+            
+            <tr>
+              <th style="vertical-align: baseline;">
+              <label >Lista tras odbytych w ramach wycieczki </label> 
+              </th>
+              <th>
+                <div id="scrolltable">
+                <table class="table table-striped" width="500px">
+                  <tbody>
+                    <tr *ngFor="let odcinek of odcinki" height="60px">
+                      <td *ngIf="odcinek.nazwa">{{odcinek.nazwa}}</td>
+                      <td *ngIf="odcinek.nazwa"></td>
+                      <td *ngIf="odcinek.koniec">{{odcinek.poczatek.nazwa}}</td>
+                      <td *ngIf="odcinek.koniec">{{odcinek.koniec.nazwa}}</td>
+                      <td>{{odcinek.punkty}}pkt</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </th>
+            </tr>
+
+            <tr>
+              <th>
+                <label>Planowana data wycieczki</label> 
+              </th>
+              <th>
+                  <b>{{wycieczka.planowanaData}} </b>
+              </th>
+            </tr>
+
+            <tr>
+              <th style="padding-left: 200px;">
+                <button class="btn btn-success">
+                  ZATWIERDŹ
+                </button>
+              </th>
+              <th>
+                <button class="btn btn-secondary">
+                  ANULUJ
+                </button>
+              </th>
+            </tr>
+          </table>
       </div>
     </div>

@@ -6,3 +6,59 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
     width: 1680px;
 }
+h2 {
+    font-weight: bold;
+}
+
+.card-body{
+    margin: auto;
+    width: 1000px;
+}
+
+.table-w-gory{
+    font-size: 23px;
+    
+  border-collapse:separate; 
+  border-spacing: 0 1.5em;
+}
+.table-w-gory > tr{
+    padding-top: 200px;
+}
+
+.item-w-gory
+{
+    width: 50%;
+    float: left;
+}
+.btn{
+    height: 50px;
+    width: 150px;
+}
+.btn-success{
+    background-color: #26FB4A;
+    color: white;
+    font-weight: bold;
+    border: 0;
+}
+.btn-secondary{
+    background-color: #7F7F7F;
+    color: white;
+    font-weight: bold;
+    border: 0;
+}
+.table {
+    font-weight: normal;
+    font-size: 20px;
+    background-color: #A0E092;
+}
+
+#scrolltable { 
+    margin-top: 20px; 
+    height: 225px; 
+    overflow: auto;
+    text-align: center;
+}
+#scrolltable th div {
+    position: absolute; 
+    margin-top: -20px;
+}

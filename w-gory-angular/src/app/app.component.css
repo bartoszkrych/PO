@@ -4,6 +4,7 @@
     border-color: #707070;
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
+    height: 230px;
 }
 .btn{
     background-color: transparent;
@@ -18,6 +19,9 @@
     padding-right: 50px;
     padding-left: 50px;
 }
+.btn:focus{
+    border: 0px;;
+}
 .last{
     border: 0px;
 }
@@ -29,11 +33,22 @@ div{
 .container{
     max-width: 1680px;
 }
-
+img{
+    float: left;
+}
 h1{
+    padding-top: 50px;
+    float: left;
+    width: 70%;
     font-family: Berlin Sans FB;
     font-weight: bold;
     font-size: 60px;
     color: white;
+    text-align: left;
     text-shadow: -4px 0 #C8AE71, 0 4px #C8AE71, 4px 0 #C8AE71, 0 -4px #C8AE71;
+}
+.user{
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
 }
