@@ -1,64 +1,112 @@
-.bg-w-gory{
-    background-color: #82E180;
-    opacity: 75%;
-    border-color: #707070;
-    border-radius: 10px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
-    width: 1680px;
+.bg-w-gory {
+  background-color: #82E180;
+  opacity: 75%;
+  border-color: #707070;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
+  width: 1680px;
 }
+
 h2 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.card-body{
-    margin: auto;
-    width: 1000px;
+.card-body {
+  margin: auto;
+  width: 1000px;
 }
 
-.table-w-gory{
-    font-size: 23px;
-    
-  border-collapse:separate; 
+.table-w-gory {
+  font-size: 23px;
+
+  border-collapse: separate;
   border-spacing: 0 1.5em;
 }
-.table-w-gory > tr{
-    padding-top: 200px;
+
+.table-w-gory>tr {
+  padding-top: 200px;
 }
 
-.item-w-gory
-{
-    width: 50%;
-    float: left;
+.item-w-gory {
+  width: 50%;
+  float: left;
 }
-.btn{
-    height: 50px;
-    width: 150px;
+
+.btn {
+  height: 50px;
+  width: 150px;
 }
-.btn-success{
-    background-color: #26FB4A;
-    color: white;
-    font-weight: bold;
-    border: 0;
+
+.btn-success {
+  background-color: #26FB4A;
+  color: white;
+  font-weight: bold;
+  border: 0;
 }
-.btn-secondary{
-    background-color: #7F7F7F;
-    color: white;
-    font-weight: bold;
-    border: 0;
+
+.btn-secondary {
+  background-color: #7F7F7F;
+  color: white;
+  font-weight: bold;
+  border: 0;
 }
+
 .table {
-    font-weight: normal;
-    font-size: 20px;
-    background-color: #A0E092;
+  font-weight: normal;
+  font-size: 20px;
 }
 
-#scrolltable { 
-    margin-top: 20px; 
-    height: 225px; 
-    overflow: auto;
-    text-align: center;
+#scrolltable {
+  margin-top: 20px;
+  height: 225px;
+  overflow: auto;
+  text-align: center;
 }
+
 #scrolltable th div {
-    position: absolute; 
-    margin-top: -20px;
+  position: absolute;
+  margin-top: -20px;
+}
+
+#scrolltable tr {
+  border-bottom: 1px solid #8ED58A;
+  background-color: #A0E091;
+}
+
+.overlay {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+}
+
+.overlay>.bg-w-gory {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: table;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 400px;
+  height: 200px;
+  font-size: 27px;
+  text-align: center;
+}
+
+.overlay>.bg-w-gory>span {
+  font-weight: bold;
+
+  display: table-cell;
+  vertical-align: middle;
+  white-space: pre-line;
 }

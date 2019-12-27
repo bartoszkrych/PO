@@ -1,58 +1,64 @@
 <div class="card bg-w-gory my-5">
-    <div class="card-body">
-        <h2>Zatwierdzenie odbycia wycieczki</h2>
-          <table class="table-w-gory" width="1000px">
-            <tr>
-              <th>
-                <label>Nazwa wycieczki</label> 
-              </th>
-              <th>
-                  <b>{{wycieczka.nazwa}} </b>
-              </th>
-            </tr>
-            
-            <tr>
-              <th style="vertical-align: baseline;">
-              <label >Lista tras odbytych w ramach wycieczki </label> 
-              </th>
-              <th>
-                <div id="scrolltable">
-                <table class="table table-striped" width="500px">
-                  <tbody>
-                    <tr *ngFor="let odcinek of odcinki" height="60px">
-                      <td *ngIf="odcinek.nazwa">{{odcinek.nazwa}}</td>
-                      <td *ngIf="odcinek.nazwa"></td>
-                      <td *ngIf="odcinek.koniec">{{odcinek.poczatek.nazwa}}</td>
-                      <td *ngIf="odcinek.koniec">{{odcinek.koniec.nazwa}}</td>
-                      <td>{{odcinek.punkty}}pkt</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              </th>
-            </tr>
+  <div class="card-body">
+    <h2>Zatwierdzenie odbycia wycieczki</h2>
+    <table class="table-w-gory" width="1000px">
+      <tr>
+        <th>
+          <label>Nazwa wycieczki</label>
+        </th>
+        <th>
+          <b>{{wycieczka.nazwa}} </b>
+        </th>
+      </tr>
 
-            <tr>
-              <th>
-                <label>Planowana data wycieczki</label> 
-              </th>
-              <th>
-                  <b>{{wycieczka.planowanaData}} </b>
-              </th>
-            </tr>
+      <tr>
+        <th style="vertical-align: baseline;">
+          <label>Lista tras odbytych w ramach wycieczki </label>
+        </th>
+        <th>
+          <div id="scrolltable">
+            <table class="table table-striped" width="500px">
+              <tbody>
+                <tr *ngFor="let odcinek of odcinki" height="60px">
+                  <td *ngIf="odcinek.nazwa">{{odcinek.nazwa}}</td>
+                  <td *ngIf="odcinek.nazwa"></td>
+                  <td *ngIf="odcinek.koniec">{{odcinek.poczatek.nazwa}}</td>
+                  <td *ngIf="odcinek.koniec">{{odcinek.koniec.nazwa}}</td>
+                  <td>{{odcinek.punkty}}pkt</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </th>
+      </tr>
 
-            <tr>
-              <th style="padding-left: 200px;">
-                <button class="btn btn-success">
-                  ZATWIERDŹ
-                </button>
-              </th>
-              <th>
-                <button class="btn btn-secondary">
-                  ANULUJ
-                </button>
-              </th>
-            </tr>
-          </table>
-      </div>
-    </div>
+      <tr>
+        <th>
+          <label>Planowana data wycieczki</label>
+        </th>
+        <th>
+          <b>{{wycieczka.planowanaData | date : "dd.MM.y"}} </b>
+        </th>
+      </tr>
+
+      <tr>
+        <th style="padding-left: 200px;">
+          <button (click)="setDone()" class="btn btn-success">
+            ZATWIERDŹ
+          </button>
+        </th>
+        <th>
+          <button class="btn btn-secondary" (click)="backClicked()">
+            ANULUJ
+          </button>
+        </th>
+      </tr>
+    </table>
+
+  </div>
+
+</div>
+
+<div *ngIf="isApproved" class="overlay" (click)="backClicked()">
+  <div class="bg-w-gory"> <span>{{message}}</span></div>
+</div>
