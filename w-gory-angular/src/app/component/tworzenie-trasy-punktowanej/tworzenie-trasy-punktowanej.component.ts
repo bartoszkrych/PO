@@ -95,8 +95,7 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
   }
 
   addTrasaPunkt() {
-    if(this.trasaPunktowana.punkty != null)
-    {
+    if (this.trasaPunktowana.punkty != null) {
       this.trasaPunktowanaService.addTrasaPunkt(this.trasaPunktowana).subscribe(a => {
         if (a != null) this.message = "Dodano nową\ntrase punktowaną."
         else this.message = "Już istnieje taka\n trasa punktowana."

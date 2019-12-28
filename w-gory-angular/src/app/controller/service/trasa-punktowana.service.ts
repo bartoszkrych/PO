@@ -8,14 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TrasaPunktowanaService {
-  private url : string;
+  private url: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.url = "http://localhost:8080/trasy-punktowane";
   }
 
-  addTrasaPunkt(trasaPunkt: TrasaPunktowana) : Observable<TrasaPunktowana>
-  {
-    return this.http.post<TrasaPunktowana>(`${this.url}/addTrasaPunkt`,trasaPunkt);
+  addTrasaPunkt(trasaPunkt: TrasaPunktowana): Observable<TrasaPunktowana> {
+    return this.http.post<TrasaPunktowana>(`${this.url}/addTrasaPunkt`, trasaPunkt);
   }
 }

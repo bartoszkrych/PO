@@ -1,4 +1,4 @@
-export class OdznakaTurysty{
+export class OdznakaTurysty {
     id: number;
     dataRzopoczecia: Date;
     dataZdobycia: Date;

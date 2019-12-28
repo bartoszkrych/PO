@@ -5,8 +5,8 @@ import { TworzenieTrasyPunktowanejComponent } from './component/tworzenie-trasy-
 
 
 const routes: Routes = [
-  {path:'wycieczki', component: ZatwierdzenieWycieczkiComponent},
-  {path:'trasy-punktowane', component: TworzenieTrasyPunktowanejComponent}
+  { path: 'wycieczki', component: ZatwierdzenieWycieczkiComponent },
+  { path: 'trasy-punktowane', component: TworzenieTrasyPunktowanejComponent }
 ];
 
 @NgModule({

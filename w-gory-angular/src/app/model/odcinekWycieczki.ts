@@ -1,7 +1,7 @@
 import { Wycieczka } from './wycieczka';
 import { OdcinekTrasy } from './odcinekTrasy';
 
-export class OdcinekWycieczki{
+export class OdcinekWycieczki {
     wycieczka: Wycieczka;
     odcinekTrasy: any;
 }

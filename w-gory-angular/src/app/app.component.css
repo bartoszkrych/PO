@@ -21,8 +21,9 @@
   padding-left: 50px;
 }
 
-.btn-primary:focus,.btn-primary:active {
-  outline: none ;
+.btn-primary:focus,
+.btn-primary:active {
+  outline: none;
   box-shadow: none;
   background-color: #17811E;
   color: #000;

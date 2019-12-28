@@ -11,9 +11,9 @@ export class MiejsceService {
 
   constructor(private http: HttpClient) {
     this.url = "http://localhost:8080/miejsca";
-   }
+  }
 
-   getAllMiejsca(): Observable<Miejsce[]>{
-     return this.http.get<Miejsce[]>(`${this.url}/`);
-   }
+  getAllMiejsca(): Observable<Miejsce[]> {
+    return this.http.get<Miejsce[]>(`${this.url}/`);
+  }
 }

@@ -1,7 +1,7 @@
 import { OdznakaTurysty } from './odznakaTurysty';
 import { OdcinekWycieczki } from './odcinekWycieczki';
 
-export class Wycieczka{
+export class Wycieczka {
     id: number;
     nazwa: string;
     planowanaData: Date;

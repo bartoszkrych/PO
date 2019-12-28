@@ -27,7 +27,7 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
 
     this.wycieczka = new Wycieczka();
     //this.id = this.route.snapshot.params['id'];
-    this.id = 8;
+    this.id = 98;
     this.wycieczkaService.getWycieczkaById(this.id)
       .subscribe(w => {
         this.wycieczka = w;
@@ -45,8 +45,8 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
     let plan: Date = new Date(this.wycieczka.planowanaData);
     if (plan.getTime() < dateNow.getTime()) {
       let answer: Wycieczka;
-      this.wycieczkaService.setWycieczkaDone(this.id).subscribe( a => answer = a);
-      if( answer != null) this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
+      this.wycieczkaService.setWycieczkaDone(this.id).subscribe(a => answer = a);
+      if (answer != null) this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
       else this.message = "Coś poszło nie tak.\nSpróbuj później."
     }
     else {

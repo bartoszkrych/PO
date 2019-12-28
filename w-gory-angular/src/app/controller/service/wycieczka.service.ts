@@ -9,17 +9,17 @@ import { Wycieczka } from 'src/app/model/wycieczka';
 })
 export class WycieczkaService {
 
-  private url : string;
+  private url: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.url = "http://localhost:8080/wycieczki";
   }
 
-  getWycieczkaById(id) : Observable<Wycieczka>{
+  getWycieczkaById(id): Observable<Wycieczka> {
     return this.http.get<Wycieczka>(`${this.url}/${id}`);
   }
 
-  setWycieczkaDone(id) : Observable<Wycieczka>{
+  setWycieczkaDone(id): Observable<Wycieczka> {
     return this.http.get<Wycieczka>(`${this.url}/done/${id}`);
   }
 }

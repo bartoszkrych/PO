@@ -1,8 +1,8 @@
 import { Teren } from './teren';
 
-export class Obszar{
+export class Obszar {
     symbol: string;
     nazwa: string;
-    
+
     tereny: Teren[];
 }
