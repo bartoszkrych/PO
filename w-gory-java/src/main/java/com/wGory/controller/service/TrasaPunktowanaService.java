@@ -21,6 +21,6 @@ public class TrasaPunktowanaService {
         var trasy = trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek, koniec);
         if (!trasy.isEmpty()) return null;
 
-        return trasaPunktowanaRepository.save(trasaPunkt);
+        return trasaPunktowanaRepository.saveAndFlush(trasaPunkt);
     }
 }

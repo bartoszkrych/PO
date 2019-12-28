@@ -33,21 +33,21 @@ INSERT INTO odcinek_trasy(id,punkty) values
 
 -- ADD WYCIECZKA WITH ODZNAKA
 INSERT INTO odznaka_turysty (id, czy_normy_spelnione, czy_zdobyta, data_rozpoczecia, data_zdobycia) VALUES
-(6,0,0,'2019-12-10 00:00:00.000', null);
+(7,0,0,'2019-12-10 00:00:00.000', null);
 
 INSERT INTO wycieczka (id, data_utworzenia, nazwa , planowana_data , status , odznaka_turysty_id) VALUES
-(7, '2019-12-20 00:00:00.000','Moja wycieczka na swieta', '2019-12-24 00:00:00.000','Zaplanowana',6);
+(8, '2019-12-20 00:00:00.000','Moja wycieczka na swieta', '2019-12-24 00:00:00.000','Zaplanowana',7);
 
 -- ADD ONE MORE  TRASA_WLASNA
 INSERT INTO trasa_wlasna (dlugosc, nazwa, opis, przewyzszenie, trasa_wlasna_id) VALUES
-(800,'Moja trasa 2', null ,151,8);
+(800,'Moja trasa 2', null ,151,6);
 
 INSERT INTO odcinek_trasy(id,punkty) values
-(8,2);
+(6,2);
 
 -- RELATION WYCIECZKA - ODCINKI
 INSERT INTO odcinek_wycieczki (odcinek_trasy_id, wycieczka_id) VALUES
-(8,7),(3,7),(1,7),(5,7);
+(6,8),(3,8),(1,8),(5,8);
 
 INSERT INTO wycieczka_odcinki_wycieczki (wycieczka_id, odcinki_wycieczki_odcinek_trasy_id, odcinki_wycieczki_wycieczka_id) VALUES
-(7,8,7),(7,3,7),(7,1,7),(7,5,7);
+(8,6,8),(8,3,8),(8,1,8),(8,5,8);
