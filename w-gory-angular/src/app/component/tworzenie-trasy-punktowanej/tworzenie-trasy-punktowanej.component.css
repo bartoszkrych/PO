@@ -56,32 +56,98 @@ h2 {
   font-size: 20px;
 }
 
-select, input{
-    width: 400px;
+select,
+input {
+  width: 400px;
 }
 
-label{
+label {
   font-weight: normal;
 }
 
 input.ng-invalid.ng-touched:not(.ng-pristine) {
   border: 1px solid red;
 }
-p.validation-error{
+
+p.validation-error {
   margin: 5px;
   color: red;
   display: none;
 }
-input.ng-invalid.ng-touched:not(.ng-pristine) + p.validation-error {
+
+input.ng-invalid.ng-touched:not(.ng-pristine)+p.validation-error {
   display: block;
 }
-small{
+
+small {
   color: red;
   font-size: 12px;
   float: right;
   margin-right: 100px;
 }
+select {
 
+  /* reset */
+
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+
+select.minimal {
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+  background-image:
+    linear-gradient(45deg, green 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, green 50%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  border-color: green;
+  outline: 0 green;
+}
+
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .overlay {
   position: fixed;
