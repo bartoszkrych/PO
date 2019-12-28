@@ -4,6 +4,7 @@ import com.wGory.controller.service.TrasaPunktowanaService;
 import com.wGory.model.TrasaPunktowana;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/trasy-punktowane")
@@ -24,7 +25,7 @@ public class TrasaPunktowanaController {
             required = true,
             dataType = "TrasaPunktowana")
     @PostMapping("/addTrasaPunkt")
-    public TrasaPunktowana addTrasaPunkt(@RequestBody TrasaPunktowana trasaPunkt) {
-        return trasaPunktowanaService.addTrasaPunkt(trasaPunkt);
+    public ResponseEntity<TrasaPunktowana> addTrasaPunkt(@RequestBody TrasaPunktowana trasaPunkt) {
+        return ResponseEntity.ok(trasaPunktowanaService.addTrasaPunkt(trasaPunkt));
     }
 }
