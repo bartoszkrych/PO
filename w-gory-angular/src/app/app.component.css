@@ -21,9 +21,11 @@
   padding-left: 50px;
 }
 
-.btn:focus {
-  border: 0px;
-  ;
+.btn-primary:focus,.btn-primary:active {
+  outline: none ;
+  box-shadow: none;
+  background-color: #17811E;
+  color: #000;
 }
 
 .last {
