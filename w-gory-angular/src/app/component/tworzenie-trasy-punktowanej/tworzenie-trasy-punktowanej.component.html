@@ -1,1 +1,67 @@
-<p>tworzenie-trasy-punktowanej works!</p>
+<div class="card bg-w-gory my-5">
+  <div class="card-body">
+    <h2>Tworzenie nowej trasy punktowanej</h2>
+    <form (ngSubmit)="addTrasaPunkt()" #trasaPunktowanaForm="ngForm">
+      <table class="table-w-gory" width="1000px">
+        <tr>
+          <th>
+            <label>Obszar miejsc</label>
+            <select name="obszar" (change)="callObszar($event.target.value)" class="form-control">
+              <option *ngFor="let o of obszary" [ngValue]="o.nazwa">{{o.nazwa}}</option>
+            </select>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label>Teren miejsca początkowego</label>
+            <select name="teren_p" (change)="callTerenP($event.target.value)" class="form-control">
+              <option *ngFor="let tp of tereny_p" [ngValue]="tp.nazwa">{{tp.nazwa}}</option>
+            </select>
+          </th>
+          <th>
+            <label>Nazwa miejsca początkowego</label>
+            <select name="miejsce_p" (change)="callMiejsceP($event.target.value)" class="form-control">
+              <option *ngFor="let mp of miejsca_p" [ngValue]="mp.nazwa">{{mp.nazwa}}</option>
+            </select>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label>Teren miejsca końcowego</label>
+            <select name="teren_k" (change)="callTerenK($event.target.value)" class="form-control">
+              <option *ngFor="let tk of tereny_k" [ngValue]="tk.nazwa">{{tk.nazwa}}</option>
+            </select>
+          </th>
+          <th>
+            <label>Nazwa miejsca końcowego</label>
+            <select name="miejsce_k" (change)="callMiejsceK($event.target.value)" class="form-control">
+              <option *ngFor="let mk of miejsca_k" [ngValue]="mk.nazwa">{{mk.nazwa}}</option>
+            </select>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <label>Punkty do zdobycia</label>
+            <input type="number" [(ngModel)]="trasaPunktowana.punkty" class="form-control" id="punkty" name="punkty">
+          </th>
+          <th>
+            <button type="submit"  class="btn btn-success" style="margin-right: 100px;">
+              DODAJ
+            </button>
+            <button (click)="backClicked()" class="btn btn-secondary">
+              ANULUJ
+            </button>
+          </th>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+</div>
+
+<div *ngIf="isApproved" class="overlay" (click)="backClicked()">
+  <div class="bg-w-gory"> <span>{{message}}</span></div>
+</div>

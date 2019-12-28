@@ -14,8 +14,8 @@ export class TrasaPunktowanaService {
     this.url = "http://localhost:8080/trasy-punktowane";
   }
 
-  addTrasaPunkt(trasaPunkt: TrasaPunktowana)
+  addTrasaPunkt(trasaPunkt: TrasaPunktowana) : Observable<TrasaPunktowana>
   {
-    return this.http.post(`${this.url}/addTrasaPunkt`,trasaPunkt);
+    return this.http.post<TrasaPunktowana>(`${this.url}/addTrasaPunkt`,trasaPunkt);
   }
 }
