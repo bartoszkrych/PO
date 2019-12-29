@@ -9,7 +9,7 @@
 * [Author](#author)
 
 ## General info
-Student project - Software Design (Projektowanie oprogramowania).
+Student project - Software Design (Projektowanie oprogramowania).<br/>
 Support for GOT (Górska Odznaka Turystyczna).
 
 ### DIAGRAMS
@@ -24,6 +24,7 @@ Project is created with:
 * [Hibernate 2.1](http://hibernate.org/)
 * [SQLite 3.8.11.2](https://www.sqlite.org/index.html)
 * [Lombok](https://projectlombok.org/)
+* [Swagger 2.9.2](https://swagger.io/)
 * [Angular 8](https://angular.io/docs/)
 * [Angular CLI 8.3.20](https://www.npmjs.com/package/@angular/cli/v/8.3.20)
 
@@ -31,9 +32,10 @@ Project is created with:
 
 ### Back-end(w-gory-java)
 
-You need plugin in IDE [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) by Michail Plushnikov.
-[Instruction](https://github.com/mplushnikov/lombok-intellij-plugin#installation).
-To run this project open WGoryApplication.java and then press Alt+Shift+F10
+You need plugin in IDE [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) by Michail Plushnikov.<br/>
+[Instruction](https://github.com/mplushnikov/lombok-intellij-plugin#installation).<br/>
+To run this project open WGoryApplication.java and then press Alt+Shift+F10.<br/><br/>
+After run, You can open a [documentation](http://localhost:8080/swagger-ui.html)
 
 ### Front-end(w-gory-angular)
 
@@ -44,4 +46,4 @@ for more information go to [w-gory-angular](https://github.com/bartoszkrych/PO/t
 
 ## Author
 
-* Bartosz Krych 
+* [Bartosz Krych](https://github.com/bartoszkrych) 
