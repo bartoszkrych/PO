@@ -40,7 +40,7 @@ To run this project open WGoryApplication.java and then press Alt+Shift+F10
 1. `npm install`
 2. `ng serve`
 
-for more ifromation go to [w-gory-angular](https://github.com/bartoszkrych/PO/tree/master/w-gory-angular)
+for more information go to [w-gory-angular](https://github.com/bartoszkrych/PO/tree/master/w-gory-angular)
 
 ## Author
 
