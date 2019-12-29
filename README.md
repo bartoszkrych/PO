@@ -9,7 +9,7 @@
 * [Author](#author)
 
 ## General info
-Student project - Software Design (Projektowanie oprogramowania).
+Student project - Software Design (Projektowanie oprogramowania).<br/>
 Support for GOT (Górska Odznaka Turystyczna).
 
 ### DIAGRAMS
@@ -31,8 +31,8 @@ Project is created with:
 
 ### Back-end(w-gory-java)
 
-You need plugin in IDE [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) by Michail Plushnikov.
-[Instruction](https://github.com/mplushnikov/lombok-intellij-plugin#installation).
+You need plugin in IDE [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) by Michail Plushnikov.<br/>
+[Instruction](https://github.com/mplushnikov/lombok-intellij-plugin#installation).<br/>
 To run this project open WGoryApplication.java and then press Alt+Shift+F10
 
 ### Front-end(w-gory-angular)
@@ -44,4 +44,4 @@ for more information go to [w-gory-angular](https://github.com/bartoszkrych/PO/t
 
 ## Author
 
-* Bartosz Krych 
+* [Bartosz Krych](https://github.com/bartoszkrych) 
