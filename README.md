@@ -35,8 +35,7 @@ Project is created with:
 You need plugin in IDE [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok/) by Michail Plushnikov.<br/>
 [Instruction](https://github.com/mplushnikov/lombok-intellij-plugin#installation).<br/>
 To run this project open WGoryApplication.java and then press Alt+Shift+F10.<br/><br/>
-After run, You can open a documenation:
-* [Documentation](http://localhost:8080/swagger-ui.html)
+After run, You can open a [documentation](http://localhost:8080/swagger-ui.html)
 
 ### Front-end(w-gory-angular)
 
