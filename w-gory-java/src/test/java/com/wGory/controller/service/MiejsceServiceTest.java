@@ -1,7 +1,6 @@
-package com.wGory.service;
+package com.wGory.controller.service;
 
 import com.wGory.controller.repository.MiejsceRepository;
-import com.wGory.controller.service.MiejsceService;
 import com.wGory.model.Miejsce;
 import org.junit.Before;
 import org.junit.Test;

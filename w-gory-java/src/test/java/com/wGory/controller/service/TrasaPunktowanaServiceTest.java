@@ -1,7 +1,6 @@
-package com.wGory.service;
+package com.wGory.controller.service;
 
 import com.wGory.controller.repository.TrasaPunktowanaRepository;
-import com.wGory.controller.service.TrasaPunktowanaService;
 import com.wGory.model.Miejsce;
 import com.wGory.model.Obszar;
 import com.wGory.model.TrasaPunktowana;
@@ -47,7 +46,7 @@ public class TrasaPunktowanaServiceTest {
         trasaPunktowana.setKoniec(koniec);
 
         when(trasaPunktowanaRepository.findByPoczatekAndKoniec(poczatek, koniec)).thenReturn(new ArrayList<>());
-        when(trasaPunktowanaRepository.save(trasaPunktowana)).thenReturn(trasaPunktowana);
+        when(trasaPunktowanaRepository.saveAndFlush(trasaPunktowana)).thenReturn(trasaPunktowana);
 
         // when
         TrasaPunktowana answer = trasaPunktowanaService.addTrasaPunkt(trasaPunktowana);

@@ -1,7 +1,6 @@
-package com.wGory.service;
+package com.wGory.controller.service;
 
 import com.wGory.controller.repository.WycieczkaRepository;
-import com.wGory.controller.service.WycieczkaService;
 import com.wGory.model.StatusWycieczki;
 import com.wGory.model.Wycieczka;
 import org.junit.Before;
