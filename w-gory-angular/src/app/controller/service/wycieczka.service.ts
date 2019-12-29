@@ -20,6 +20,6 @@ export class WycieczkaService {
   }
 
   setWycieczkaDone(id): Observable<Wycieczka> {
-    return this.http.get<Wycieczka>(`${this.url}/done/${id}`);
+    return this.http.get<Wycieczka>(`${this.url}/done/${id}`, {responseType: 'text' as 'json'});
   }
 }

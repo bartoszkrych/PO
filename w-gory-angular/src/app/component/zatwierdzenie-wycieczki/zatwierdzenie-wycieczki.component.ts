@@ -44,10 +44,10 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
     let dateNow: Date = new Date();
     let plan: Date = new Date(this.wycieczka.planowanaData);
     if (plan.getTime() < dateNow.getTime()) {
-      let answer: Wycieczka;
-      this.wycieczkaService.setWycieczkaDone(this.id).subscribe(a => answer = a);
-      if (answer != null) this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
-      else this.message = "Coś poszło nie tak.\nSpróbuj później."
+      this.wycieczkaService.setWycieczkaDone(this.id).subscribe(a => {
+        if (a != null && this.wycieczka.status == 'Zaplanowana') this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
+        else this.message = "Coś poszło nie tak.\nSpróbuj później.";
+      });
     }
     else {
       this.message = `Jeszcze nie odbyłeś\ntej wycieczki!`;
