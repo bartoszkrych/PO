@@ -5,6 +5,7 @@ import { Wycieczka } from 'src/app/model/wycieczka';
 import { OdcinekTrasy } from 'src/app/model/odcinekTrasy';
 
 import { Location } from '@angular/common';
+import { OdcinekWycieczki } from 'src/app/model/odcinekWycieczki';
 
 @Component({
   selector: 'app-zatwierdzenie-wycieczki',
@@ -31,7 +32,12 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
     this.wycieczkaService.getWycieczkaById(this.id)
       .subscribe(w => {
         this.wycieczka = w;
-        let odcinkiZWycieczki = w.odcinkiWycieczki;
+        let odcinkiZWycieczki: Array<OdcinekWycieczki> = new Array();
+        for (let oZw of w.odcinkiWycieczki) {
+          if (oZw.czyOdbyta) {
+            odcinkiZWycieczki.push(oZw);
+          }
+        }
         this.odcinki = new Array(odcinkiZWycieczki.length);
         for (let i = 0; i < odcinkiZWycieczki.length; i++) {
           this.odcinki[i] = odcinkiZWycieczki[i].odcinekTrasy;

@@ -1,9 +1,11 @@
 package com.wGory.model;
 
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "ODCINEK_WYCIECZKI")
@@ -22,6 +24,11 @@ public class OdcinekWycieczki {
     @MapsId("odcinekTrasyId")
     @JoinColumn(name = "odcinek_trasy_id")
     private OdcinekTrasy odcinekTrasy;
+
+    private Boolean czyOdbyta = false;
+
+    @Nullable
+    private LocalDate dataOdbycia;
 
 }
 
