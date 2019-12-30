@@ -15,8 +15,8 @@
         <tr>
           <th>
             <label>Teren miejsca początkowego</label>
-            <select name="teren_p" (change)="callTerenP($event.target.value)" class="form-control minimal">
-              <option *ngFor="let tp of tereny_p" [ngValue]="tp.nazwa">{{tp.nazwa}}</option>
+            <select name="teren" (change)="callTerenP($event.target.value)" class="form-control minimal">
+              <option *ngFor="let tp of tereny" [ngValue]="tp.nazwa">{{tp.nazwa}}</option>
             </select>
           </th>
           <th>
@@ -26,15 +26,19 @@
               <option *ngIf="miejsca_p.length==0" value=""></option>
               <option *ngFor="let mp of miejsca_p" [ngValue]="mp.nazwa">{{mp.nazwa}}</option>
             </select>
-            <p class="validation-error invalid-feedback"><small>Uzupełnij!</small></p>
+            <p class="validation-error invalid-feedback" style="display:block;">
+              <small *ngIf="!trasaPunktowana.poczatek">Uzupełnij!</small>
+              <small *ngIf="trasaPunktowana.koniec == trasaPunktowana.poczatek && trasaPunktowana.poczatek">Miejsca tras
+                muszą być różne!</small>
+            </p>
           </th>
         </tr>
 
         <tr>
           <th>
             <label>Teren miejsca końcowego</label>
-            <select name="teren_k" (change)="callTerenK($event.target.value)" class="form-control minimal">
-              <option *ngFor="let tk of tereny_k" [ngValue]="tk.nazwa">{{tk.nazwa}}</option>
+            <select name="teren" (change)="callTerenK($event.target.value)" class="form-control minimal">
+              <option *ngFor="let tk of tereny" [ngValue]="tk.nazwa">{{tk.nazwa}}</option>
             </select>
           </th>
           <th>
@@ -43,8 +47,11 @@
               <option *ngIf="miejsca_k.length==0" value=""></option>
               <option *ngFor="let mk of miejsca_k" [ngValue]="mk.nazwa">{{mk.nazwa}}</option>
             </select>
-            <p *ngIf="miejsca_k.length==0 && isClicked" class="validation-error invalid-feedback"
-              style="display:block;"><small>Uzupełnij!</small></p>
+            <p class="validation-error invalid-feedback" style="display:block;">
+              <small *ngIf="!trasaPunktowana.koniec">Uzupełnij!</small>
+              <small *ngIf="trasaPunktowana.koniec == trasaPunktowana.poczatek && trasaPunktowana.koniec">Miejsca tras
+                muszą być różne!</small>
+            </p>
           </th>
         </tr>
 

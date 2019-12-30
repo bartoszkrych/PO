@@ -20,8 +20,7 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
   miejsca: Array<Miejsce>;
   miejsca_p: Array<Miejsce>;
   miejsca_k: Array<Miejsce>;
-  tereny_p: Array<Teren>;
-  tereny_k: Array<Teren>;
+  tereny: Array<Teren>;
   obszary: Array<Obszar>;
   message: string;
   isApproved: boolean;
@@ -37,8 +36,7 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
     this.miejsca = new Array();
     this.miejsca_p = new Array();
     this.miejsca_k = new Array();
-    this.tereny_p = new Array();
-    this.tereny_k = new Array();
+    this.tereny = new Array();
     this.obszary = new Array();
     this.miejsceService.getAllMiejsca().subscribe(data => {
       this.miejsca = data;
@@ -50,59 +48,47 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
         }
       }
       this.callObszar(this.obszary[0].nazwa);
-      this.callMiejsceP(this.miejsca_p[0].nazwa);
     })
   }
 
   callObszar(obszar) {
     let index = this.obszary.findIndex(o => o.nazwa === obszar);
-    this.tereny_p = this.obszary[index].tereny;
-    this.tereny_k = this.obszary[index].tereny;
-    this.callTerenP(this.tereny_p[0].nazwa);
-    this.callTerenK(this.tereny_p[0].nazwa);
+    this.tereny = this.obszary[index].tereny;
+    this.callTerenP(this.tereny[0].nazwa);
+    this.callTerenK(this.tereny[0].nazwa);
   }
 
   callTerenP(teren) {
-    let index = this.tereny_p.findIndex(tp => tp.nazwa === teren);
     this.miejsca_p.length = 0;
     for (let m of this.miejsca) {
       if (m.terenGorski.nazwa === teren)
         this.miejsca_p.push(m);
     }
-    if (this.miejsca_p.length != 0) this.callMiejsceP(this.miejsca_p[0].nazwa)
-    this.trasaPunktowana.poczatek = null;
+    this.trasaPunktowana.poczatek = this.miejsca_p[0];
   }
 
   callTerenK(teren) {
-    let index = this.tereny_p.findIndex(tp => tp.nazwa === teren);
     this.miejsca_k.length = 0;
     for (let m of this.miejsca) {
       if (m.terenGorski.nazwa === teren)
         this.miejsca_k.push(m);
     }
-    if (this.miejsca_k.length != 0) this.callMiejsceK(this.miejsca_p[0].nazwa)
-    this.trasaPunktowana.koniec = null
-  }
-
-  callMiejsceP(miejsce) {
-    this.miejsca_k = Object.assign([], this.miejsca_p);
-    let index = this.miejsca_k.findIndex(m => m.nazwa === miejsce);
-    if (index > -1) {
-      this.miejsca_k.splice(index, 1);
-    }
-    this.trasaPunktowana.poczatek = this.miejsca_p[index];
     this.trasaPunktowana.koniec = this.miejsca_k[0];
   }
 
+  callMiejsceP(miejsce) {
+    let index = this.miejsca.findIndex(m => m.nazwa === miejsce);
+    this.trasaPunktowana.poczatek = this.miejsca[index];
+  }
+
   callMiejsceK(miejsce) {
-    let index = this.miejsca_k.findIndex(m => m.nazwa === miejsce);
-    this.trasaPunktowana.koniec = this.miejsca_k[index];
+    let index = this.miejsca.findIndex(m => m.nazwa === miejsce);
+    this.trasaPunktowana.koniec = this.miejsca[index];
   }
 
   addTrasaPunkt() {
-    this.isClicked = true;
-    if (this.trasaPunktowana.punkty != null && this.trasaPunktowana.koniec != null && this.trasaPunktowana.poczatek != null) {
-      this.isClicked = false;
+    if (this.trasaPunktowana.punkty && this.trasaPunktowana.koniec && this.trasaPunktowana.poczatek && this.trasaPunktowana.poczatek != this.trasaPunktowana.koniec) {
+      console.log(this.trasaPunktowana);
       this.trasaPunktowanaService.addTrasaPunkt(this.trasaPunktowana).subscribe(a => {
         if (a != null) this.message = "Dodano nową\ntrase punktowaną."
         else this.message = "Już istnieje taka\n trasa punktowana."
