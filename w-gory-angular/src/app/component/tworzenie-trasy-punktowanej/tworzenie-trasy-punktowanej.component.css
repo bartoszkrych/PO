@@ -71,12 +71,20 @@ input.ng-invalid.ng-touched:not(.ng-pristine) {
 }
 
 p.validation-error {
-  margin: 5px;
+  margin: -3px;
   color: red;
   display: none;
 }
 
 input.ng-invalid.ng-touched:not(.ng-pristine)+p.validation-error {
+  display: block;
+}
+
+select.ng-invalid.ng-touched:not(.ng-pristine) {
+  border: 1px solid red;
+}
+
+select.ng-invalid.ng-touched:not(.ng-pristine)+p.validation-error {
   display: block;
 }
 
@@ -190,6 +198,11 @@ input[type=number] {
 }
 
 
-th > button{
+th>button {
   margin-top: 48px;
+}
+
+th {
+  vertical-align: top;
+  height: 110px;
 }

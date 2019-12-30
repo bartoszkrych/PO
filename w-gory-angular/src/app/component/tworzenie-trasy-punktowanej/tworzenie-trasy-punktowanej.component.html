@@ -21,9 +21,12 @@
           </th>
           <th>
             <label>Nazwa miejsca początkowego</label>
-            <select name="miejsce_p" (change)="callMiejsceP($event.target.value)" class="form-control minimal">
+            <select name="miejsce_p" (change)="callMiejsceP($event.target.value)" class="form-control minimal"
+              required="required">
+              <option *ngIf="miejsca_p.length==0" value=""></option>
               <option *ngFor="let mp of miejsca_p" [ngValue]="mp.nazwa">{{mp.nazwa}}</option>
             </select>
+            <p class="validation-error invalid-feedback"><small>Uzupełnij!</small></p>
           </th>
         </tr>
 
@@ -36,9 +39,12 @@
           </th>
           <th>
             <label>Nazwa miejsca końcowego</label>
-            <select name="miejsce_k" (change)="callMiejsceK($event.target.value)" class="form-control minimal">
+            <select name="miejsce_k" (change)="callMiejsceK($event.target.value)" class="form-control minimal" required>
+              <option *ngIf="miejsca_k.length==0" value=""></option>
               <option *ngFor="let mk of miejsca_k" [ngValue]="mk.nazwa">{{mk.nazwa}}</option>
             </select>
+            <p *ngIf="miejsca_k.length==0 && isClicked" class="validation-error invalid-feedback"
+              style="display:block;"><small>Uzupełnij!</small></p>
           </th>
         </tr>
 

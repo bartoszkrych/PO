@@ -25,6 +25,7 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
   obszary: Array<Obszar>;
   message: string;
   isApproved: boolean;
+  isClicked: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private miejsceService: MiejsceService,
     private trasaPunktowanaService: TrasaPunktowanaService, private _location: Location) { }
@@ -68,6 +69,8 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
       if (m.terenGorski.nazwa === teren)
         this.miejsca_p.push(m);
     }
+    if (this.miejsca_p.length != 0) this.callMiejsceP(this.miejsca_p[0].nazwa)
+    this.trasaPunktowana.poczatek = null;
   }
 
   callTerenK(teren) {
@@ -77,6 +80,8 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
       if (m.terenGorski.nazwa === teren)
         this.miejsca_k.push(m);
     }
+    if (this.miejsca_k.length != 0) this.callMiejsceK(this.miejsca_p[0].nazwa)
+    this.trasaPunktowana.koniec = null
   }
 
   callMiejsceP(miejsce) {
@@ -95,7 +100,9 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
   }
 
   addTrasaPunkt() {
-    if (this.trasaPunktowana.punkty != null) {
+    this.isClicked = true;
+    if (this.trasaPunktowana.punkty != null && this.trasaPunktowana.koniec != null && this.trasaPunktowana.poczatek != null) {
+      this.isClicked = false;
       this.trasaPunktowanaService.addTrasaPunkt(this.trasaPunktowana).subscribe(a => {
         if (a != null) this.message = "Dodano nową\ntrase punktowaną."
         else this.message = "Już istnieje taka\n trasa punktowana."
