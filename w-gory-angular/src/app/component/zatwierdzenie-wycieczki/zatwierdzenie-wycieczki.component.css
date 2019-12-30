@@ -57,8 +57,7 @@ h2 {
 }
 
 #scrolltable {
-  margin-top: 20px;
-  height: 180px;
+  height: 184px;
   overflow: auto;
   text-align: center;
   border-bottom: 1px solid #1B9A24;
@@ -73,6 +72,10 @@ h2 {
   border-bottom: 1px solid rgba(142, 213, 138, 1);
   background-color: rgba(160, 224, 145, 1);
   height: 60px;
+}
+
+#scrolltable>table {
+  margin-bottom: -20px;
 }
 
 .overlay {
