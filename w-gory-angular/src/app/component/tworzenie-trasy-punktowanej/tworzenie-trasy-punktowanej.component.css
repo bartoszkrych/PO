@@ -1,6 +1,5 @@
 .bg-w-gory {
-  background-color: #82E180;
-  opacity: 75%;
+  background-color: rgba(130, 225, 128,0.75);
   border-color: #707070;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.16);
