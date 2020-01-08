@@ -51,7 +51,10 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
     let plan: Date = new Date(this.wycieczka.planowanaData);
     if (plan.getTime() < dateNow.getTime()) {
       this.wycieczkaService.setWycieczkaDone(this.id).subscribe(a => {
-        if (a != null && this.wycieczka.status == 'Zaplanowana') this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
+        if (a != null && this.wycieczka.status == 'Zaplanowana') {
+          if(this.wycieczka.odznakaTurysty != null) this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
+          else this.message = `Wycieczka odbyta.`;
+        }
         else this.message = "Coś poszło nie tak.\nSpróbuj później.";
       });
     }
