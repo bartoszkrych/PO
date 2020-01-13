@@ -2,7 +2,10 @@ package com.wGory.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 @Entity
@@ -10,7 +13,6 @@ import java.util.List;
 @Data
 public class Obszar {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String symbol;
     private String nazwa;
     @OneToMany

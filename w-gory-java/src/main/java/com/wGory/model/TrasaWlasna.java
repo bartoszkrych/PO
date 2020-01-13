@@ -22,7 +22,9 @@ public class TrasaWlasna extends OdcinekTrasy {
     private Integer punkty;
 
     @PostLoad
-    private void postLoad() {
+    @PostUpdate
+    @PostPersist
+    private void postOperation() {
         punkty = dlugosc / 1000 + BigDecimal.valueOf((przewyzszenie - 1) / (double) 100).setScale(0, RoundingMode.HALF_UP).intValue();
     }
 }

@@ -2,14 +2,16 @@ package com.wGory.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "MIEJSCE")
 @Data
 public class Miejsce {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String nazwa;
     @OneToOne
     private Obszar obszarGorski;
