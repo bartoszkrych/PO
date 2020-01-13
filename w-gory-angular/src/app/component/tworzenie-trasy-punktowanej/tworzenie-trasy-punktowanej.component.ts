@@ -32,7 +32,6 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
   ngOnInit() {
     this.isApproved = false;
     this.trasaPunktowana = new TrasaPunktowana();
-    this.trasaPunktowana.punkty = 0;
     this.miejsca = new Array();
     this.miejsca_p = new Array();
     this.miejsca_k = new Array();
@@ -91,6 +90,7 @@ export class TworzenieTrasyPunktowanejComponent implements OnInit {
       console.log(this.trasaPunktowana);
       this.trasaPunktowanaService.addTrasaPunkt(this.trasaPunktowana).subscribe(a => {
         if (a != null) this.message = "Dodano nową\ntrase punktowaną."
+        else this.message = "Już istnieje taka\ntrasa punktowana."
       });
       this.isApproved = true;
     }
