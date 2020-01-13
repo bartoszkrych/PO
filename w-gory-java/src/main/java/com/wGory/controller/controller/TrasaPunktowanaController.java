@@ -18,7 +18,7 @@ public class TrasaPunktowanaController {
         this.trasaPunktowanaService = trasaPunktowanaService;
     }
 
-    @ApiOperation(value = "Dodanie nieistnijącej trasy punktowanej z takim początkiem i końcem w bazie danych.")
+    @ApiOperation(value = "Dodanie nieistnijącej trasy punktowanej z wybranym początkiem i końcem w bazie danych.")
     @ApiImplicitParam(
             name = "trasaPunkt",
             value = "Nowa, nie istniejaca w bazie danych trasa punktowana stworzona przez użytkownika do zapisania w bazie danych. ",

@@ -21,7 +21,7 @@ public class MiejsceController {
         this.miejsceService = miejsceService;
     }
 
-    @ApiOperation(value = "Pobranie wszystkie istniejące miejsca w bazie danych.")
+    @ApiOperation(value = "Pobranie wszystkich istniejących miejsc w bazie danych.")
     @GetMapping("/")
     public List<Miejsce> getAllMiejsca() {
         return miejsceService.getAllMiejsca();

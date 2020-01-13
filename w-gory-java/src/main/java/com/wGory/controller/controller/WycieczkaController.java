@@ -18,7 +18,7 @@ public class WycieczkaController {
     }
 
 
-    @ApiOperation(value = "Uzyskanie istniejącej wycieczki z bazy danych po jej id.")
+    @ApiOperation(value = "Uzyskanie istniejącej wycieczki w bazie danych po jej numerze id.")
     @ApiImplicitParam(
             name = "id",
             value = "Unikatowy numer identyfikujący wycieczkę w bazie danych.",
