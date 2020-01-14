@@ -4,6 +4,10 @@
 
 ## Table of contents
 * [General info](#general-info)
+* [Diagrams](#diagrams)
+	* [Activity daigrams](#activity-diagrams)
+	* [Sequence diagrams](#sequence-diagrams)
+	* [Class diagram](#class-diagram)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Author](#author)
@@ -12,7 +16,22 @@
 Student project - Software Design (Projektowanie oprogramowania).<br/>
 Support for GOT (Górska Odznaka Turystyczna).
 
-### DIAGRAMS
+## Diagrams
+
+### Activity diagrams
+* Use case - Add a new <i>TrasaPunktowana</i> to database
+![AD new TrasaPunktowana](https://user-images.githubusercontent.com/26009817/72386490-c3ffef80-3721-11ea-8e02-564c24d64088.jpg)
+* Use case - Change of <i>Wycieczka</i> status to <i>Odbyta</i>
+![AD set done your Wycieczka](https://user-images.githubusercontent.com/26009817/72386685-1c36f180-3722-11ea-9eca-05bcd27b6eee.png)
+### Sequence diagrams
+
+*  Use case - Add a new <i>TrasaPunktowana</i> to database
+![DS new TrasaPunktowana](https://user-images.githubusercontent.com/26009817/72386491-c3ffef80-3721-11ea-8a1c-93c9c1eeebcb.jpg)
+*  Use case - Change of <i>Wycieczka</i> status to <i>Odbyta</i>
+![DS set done your Wycieczka](https://user-images.githubusercontent.com/26009817/72386489-c3675900-3721-11ea-93ea-507469b12120.jpg)
+### Class diagram
+
+![CD](https://user-images.githubusercontent.com/26009817/72386491-c3ffef80-3721-11ea-8a1c-93c9c1eeebcb.jpg)
 
 <!-- ![ERD](https://user-images.githubusercontent.com/26009817/65752723-a7599080-e10d-11e9-9503-44228043d12b.jpg) -->
 	
