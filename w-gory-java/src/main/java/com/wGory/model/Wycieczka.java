@@ -34,9 +34,9 @@ public class Wycieczka {
     private Integer punktyWycieczki;
 
     @PostLoad
-    @PostUpdate
-    @PostPersist
-    private void postOperation() {
+    @PreUpdate
+    @PrePersist
+    private void prePostOperation() {
         ArrayList<OdcinekTrasy> odbyteOdcinki = new ArrayList<>();
 
         for (OdcinekWycieczki odcinekWycieczki : odcinkiWycieczki) {
