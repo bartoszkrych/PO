@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class WycieczkaServiceTest {
     private WycieczkaService wycieczkaService;
-    private static final Integer DEFAULT_ID = 999;
+    private static final Long DEFAULT_ID = 999L;
     private static final LocalDate LOCAL_DATE_NOW = LocalDate.now();
 
     @Mock
