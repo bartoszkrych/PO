@@ -31,7 +31,7 @@ Support for GOT (Górska Odznaka Turystyczna).
 ![DS set done your Wycieczka](https://user-images.githubusercontent.com/26009817/72386489-c3675900-3721-11ea-93ea-507469b12120.jpg)
 ### Class diagram
 
-![CD](https://user-images.githubusercontent.com/26009817/72386492-c3ffef80-3721-11ea-8627-9ea14ca741fb.jpg)
+![CD](https://user-images.githubusercontent.com/26009817/72610141-eca50680-3926-11ea-838e-db15635a97ca.jpg)
 
 <!-- ![ERD](https://user-images.githubusercontent.com/26009817/65752723-a7599080-e10d-11e9-9503-44228043d12b.jpg) -->
 	
