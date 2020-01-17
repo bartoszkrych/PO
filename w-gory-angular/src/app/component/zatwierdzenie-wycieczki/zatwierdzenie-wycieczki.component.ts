@@ -53,8 +53,7 @@ export class ZatwierdzenieWycieczkiComponent implements OnInit {
       this.wycieczkaService.setWycieczkaDone(this.id).subscribe(a => {
         if (a != null && this.wycieczka.status == 'Zaplanowana') {
           if(this.wycieczka.odznakaTurysty != null) this.message = `Zdobyłeś: ${this.wycieczka.punktyWycieczki}pkt!`;
-          else if(this.wycieczka.odznakaTurysty == null) this.message = "Wycieczka została odbyta";
-          else this.message = `Wycieczka odbyta.`;
+          else this.message = `Wycieczka odbyta`;
         }
         else this.message = "Coś poszło nie tak.\nSpróbuj później.";
       });
