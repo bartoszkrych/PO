@@ -37,7 +37,7 @@ public class WycieczkaController {
             required = true,
             dataType = "Long",
             example = "1")
-    @GetMapping("/done/{id}")
+    @PutMapping("/done/{id}")
     public ResponseEntity<Wycieczka> setWycieczkaDone(@PathVariable(value = "id") Long id) {
         return ResponseEntity.ok(wycieczkaService.setWycieczkaDone(id));
     }
