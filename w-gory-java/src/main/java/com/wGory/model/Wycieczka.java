@@ -5,8 +5,9 @@ import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Boolean.TRUE;
 
 @Entity
 @Table(name = "WYCIECZKA")
@@ -36,12 +37,9 @@ public class Wycieczka {
     @PreUpdate
     @PrePersist
     private void preOperation() {
-        ArrayList<OdcinekTrasy> odbyteOdcinki = new ArrayList<>();
-
-        for (OdcinekWycieczki odcinekWycieczki : odcinkiWycieczki) {
-            if (odcinekWycieczki.getCzyOdbyta()) odbyteOdcinki.add(odcinekWycieczki.getOdcinekTrasy());
-        }
-        punktyWycieczki = odbyteOdcinki.stream().mapToInt(OdcinekTrasy::getPunkty).sum();
+        punktyWycieczki = odcinkiWycieczki.stream()
+                .filter((OdcinekWycieczki ow) -> ow.getCzyOdbyta().equals(TRUE))
+                .mapToInt((OdcinekWycieczki ow) -> ow.getOdcinekTrasy().getPunkty())
+                .sum();
     }
-
 }
