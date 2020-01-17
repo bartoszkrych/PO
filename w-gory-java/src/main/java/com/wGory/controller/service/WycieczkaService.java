@@ -16,17 +16,17 @@ public class WycieczkaService {
         this.wycieczkaRepository = wycieczkaRepository;
     }
 
-    public Wycieczka getWycieczkaById(Integer id) {
+    public Wycieczka getWycieczkaById(Long id) {
         var wycieczka = wycieczkaRepository.findById(id).orElse(null);
         if (wycieczka == null) return null;
         var odcinki = wycieczka.getOdcinkiWycieczki();
 
-         IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
+        IntStream.range(0, odcinki.size()).forEach(i -> odcinki.get(i).setWycieczka(null));
 
         return wycieczka;
     }
 
-    public Wycieczka setWycieczkaDone(Integer id) {
+    public Wycieczka setWycieczkaDone(Long id) {
         var wycieczka = wycieczkaRepository.findById(id).orElse(null);
 
         if (wycieczka == null) return null;

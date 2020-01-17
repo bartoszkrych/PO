@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TrasaPunktowanaRepository extends JpaRepository<TrasaPunktowana, Integer> {
+public interface TrasaPunktowanaRepository extends JpaRepository<TrasaPunktowana, Long> {
     List<TrasaPunktowana> findByPoczatekAndKoniec(Miejsce poczatek, Miejsce koniec);
 }

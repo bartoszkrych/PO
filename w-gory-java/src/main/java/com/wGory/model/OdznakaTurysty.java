@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class OdznakaTurysty {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
+    private Long id;
     private LocalDate dataRozpoczecia;
     private LocalDate dataZdobycia;
     private Boolean czyNormySpelnione;

@@ -14,7 +14,7 @@ import java.util.List;
 public class Wycieczka {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     @Nullable
     private String nazwa;
     @Nullable

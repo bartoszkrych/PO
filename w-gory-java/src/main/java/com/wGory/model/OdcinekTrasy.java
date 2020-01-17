@@ -11,6 +11,6 @@ import javax.persistence.*;
 public class OdcinekTrasy {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private Integer punkty;
 }

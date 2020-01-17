@@ -36,8 +36,8 @@ public class OdcinekWycieczki {
 @Data
 class OdcinekWycieczkiKlucz implements Serializable {
     @Column(name = "wycieczka_id")
-    Integer wycieczkaId;
+    Long wycieczkaId;
 
     @Column(name = " odcinek_trasy_id")
-    Integer odcinekTrasyId;
+    Long odcinekTrasyId;
 }
