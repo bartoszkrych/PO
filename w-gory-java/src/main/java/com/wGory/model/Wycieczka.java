@@ -30,7 +30,6 @@ public class Wycieczka {
     @OneToMany
     private List<OdcinekWycieczki> odcinkiWycieczki;
 
-    @Transient
     private Integer punktyWycieczki;
 
     @PostLoad
