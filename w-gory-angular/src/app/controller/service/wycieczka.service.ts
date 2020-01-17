@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TrasaPunktowana } from 'src/app/model/trasaPunktowana';
 import { Wycieczka } from 'src/app/model/wycieczka';
 
 @Injectable({
