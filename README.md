@@ -22,7 +22,7 @@ Support for GOT (Górska Odznaka Turystyczna).
 * Use case - Add a new <i>TrasaPunktowana</i> to database
 ![AD new TrasaPunktowana](https://user-images.githubusercontent.com/26009817/72386490-c3ffef80-3721-11ea-8e02-564c24d64088.jpg)
 * Use case - Change of <i>Wycieczka</i> status to <i>Odbyta</i>
-![AD set done your Wycieczka](https://user-images.githubusercontent.com/26009817/72386685-1c36f180-3722-11ea-9eca-05bcd27b6eee.png)
+![AD set done your Wycieczka](https://user-images.githubusercontent.com/26009817/72749292-f2664a80-3bb9-11ea-94f1-a7a75d4cc59e.jpg)
 ### Sequence diagrams
 
 *  Use case - Add a new <i>TrasaPunktowana</i> to database
