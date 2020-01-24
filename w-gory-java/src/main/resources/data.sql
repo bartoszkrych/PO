@@ -48,6 +48,3 @@ INSERT INTO odcinek_trasy(id,punkty) values
 -- RELATION WYCIECZKA - ODCINKI
 INSERT INTO odcinek_wycieczki (odcinek_trasy_id, wycieczka_id,czy_odbyta) VALUES
 (96,98,1),(93,98,1),(91,98,0),(95,98,1);
-
-INSERT INTO wycieczka_odcinki_wycieczki (wycieczka_id, odcinki_wycieczki_odcinek_trasy_id, odcinki_wycieczki_wycieczka_id) VALUES
-(98,96,98),(98,93,98),(98,91,98),(98,95,98);

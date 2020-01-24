@@ -28,7 +28,8 @@ public class Wycieczka {
 
     @ManyToOne
     private OdznakaTurysty odznakaTurysty;
-    @OneToMany
+
+    @OneToMany(mappedBy = "wycieczka")
     private List<OdcinekWycieczki> odcinkiWycieczki;
 
     private Integer punktyWycieczki;
