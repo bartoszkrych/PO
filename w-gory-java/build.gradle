@@ -29,4 +29,5 @@ dependencies {
 	runtime group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.11.2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.flywaydb:flyway-core'
 }
