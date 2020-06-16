@@ -43,6 +43,7 @@ Project is created with:
 * [Hibernate 2.1](http://hibernate.org/)
 * [SQLite 3.8.11.2](https://www.sqlite.org/index.html)
 * [Lombok](https://projectlombok.org/)
+* [ModelMapper](http://modelmapper.org/)
 * [Swagger 2.9.2](https://swagger.io/)
 * [Angular 8](https://angular.io/docs/)
 * [Angular CLI 8.3.20](https://www.npmjs.com/package/@angular/cli/v/8.3.20)
